@@ -2,10 +2,9 @@ import { View, Text } from 'react-native';
 
 export default function LittleLemonHeader() {
   return (
-    <View style={{ flex: 0.9 }}>
+    <View style={{ flex: 0.1 }}>
       <Text
         style={{
-          flex: 0.1, 
           backgroundColor: '#F4CE14',
           padding: 40,
           fontSize: 30,

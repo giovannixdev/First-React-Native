@@ -10,7 +10,7 @@ export default function LittleLemonFooter() {
         textAlign: 'center',
         bottom: 0
       }}>
-        All rights reserved by Little Lemon, 2022
+        All rights reserved by Little Lemon, 2022{' '}
       </Text>
     </View>
   );
