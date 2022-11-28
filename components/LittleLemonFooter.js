@@ -1,18 +1,25 @@
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 export default function LittleLemonFooter() {
   return (
-    <View style={{ flex: 0.10, backgroundColor: '#F4CE14' }}>
-      <Text style={{
-        padding: 40,
-        fontSize: 15,
-        color: 'black',
-        textAlign: 'center',
-        bottom: 0
-      }}>
+    <View style={styles.container}>
+      <Text style={styles.footerText}>
         All rights reserved by Little Lemon, 2022{' '}
       </Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 0.1,
+    backgroundColor: '#EE9972'
+  },
+  footerText: {
+    padding: 40,
+    fontSize: 15,
+    color: 'black',
+    textAlign: 'center',
+  },
+});
 
