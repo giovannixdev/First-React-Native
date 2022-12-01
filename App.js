@@ -16,11 +16,11 @@ export default function App() {
     <>
     <LittleLemonHeader/>
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="LoginScreen">
+      <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
-        <Stack.Screen name="Login Screen" component={LoginScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
       </Stack.Navigator>
-    </NavigationContainer>
+    </NavigationContainer>  
     <LittleLemonFooter/>
     </>
   );
