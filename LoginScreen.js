@@ -8,6 +8,7 @@ export default function LoginScreen() {
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.headerText}>Welcome to Little Lemon</Text>
+      <Text style={styles.headerText}>Login to continue</Text>
       {isLogin ? 
         <Text style={styles.headerText}>You are logged in</Text> : 
         <>
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
   headerText: {
     padding: 40,
     fontSize: 30,
-    color: '#EDEFEE',
+    color: 'black',
     textAlign: 'center',
   },
   input: {
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     padding: 20,
     marginVertical: 8,
-    color: '#EDEFEE',
+    color: 'black',
     textAlign: 'center',
   },
 });
