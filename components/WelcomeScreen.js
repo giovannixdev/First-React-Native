@@ -1,24 +1,28 @@
 import React, {useState} from 'react';
-import { View, Text, StyleSheet, Image, TextInput } from 'react-native';
+import { View, Text, StyleSheet, Image, TextInput, useColorScheme } from 'react-native';
 
 export default function WelcomeScreen() {
+  const colorScheme = useColorScheme();
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor: colorScheme === 'dark' ? 'black' : 'white'}]}>
       <View style={styles.headerWrapper}>
         <Image 
           style={styles.logo} 
           source={require('../img/logo.png')}
-          resizeMode='contain' 
+          resizeMode='cover' 
           accessible={true}
           accessibilityLabel={'Little Lemon Logo'}
         />
-        <Text style={styles.headerText}>
+        <Text style={[styles.headerText, colorScheme === 'light'
+          ? { color: '#333333' }
+          : { color: '#EDEFEE' }]}>
           Little Lemon
         </Text>
       </View>
-      <Text style={styles.bodyText}>
+      <Text style={[styles.bodyText, colorScheme === 'light' ? { color: '#333333' } : { color: '#EDEFEE' }]}>
         Little Lemon is a charming neighborhood bistro that serves simple food and classic cocktails in a lively but casual environment. We would love to hear more about your experience with us!
       </Text>
+      <Text style={styles.regular}>Color Scheme: {colorScheme}</Text> 
       
     </View>
   );
@@ -43,14 +47,14 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     paddingBottom: 10,
     fontSize: 32,
-    color: 'white',
+    color: 'black',
     textAlign: 'center',
   },
   bodyText: {
     padding: 20,
     fontSize: 26,
     marginVertical: 8,
-    color: 'white',
+    color: 'black',
     textAlign: 'center',
   },
   // image: {
