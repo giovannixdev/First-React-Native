@@ -24,23 +24,23 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>   */}
       <NavigationContainer>
+        <LittleLemonHeader />
         <Tab.Navigator
           screenOptions={({ route }) => ({
             tabBarIcon: ({ focused, color, size }) => {
               let iconName;
 
               if (route.name === 'Welcome') {
-                iconName = focused
-                  ? 'ios-information-circle'
-                  : 'ios-information-circle-outline';
+                iconName = 'ios-home'
               } else if (route.name === 'Login') {
-                iconName = 'ios-list';
+                iconName = 'ios-enter';
               }
-              return <Ionicons name={iconName} size={size} color={color} />;
+              return <Ionicons name={iconName} size={size} />;
             },
             tabBarActiveTintColor: 'tomato',
             tabBarInactiveTintColor: 'gray',
-          })}>
+          })}
+          >
           <Tab.Screen name="Welcome" component={WelcomeScreen} />
           <Tab.Screen name="Login" component={LoginScreen} />
         </Tab.Navigator>

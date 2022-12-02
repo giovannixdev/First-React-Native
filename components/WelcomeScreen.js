@@ -30,7 +30,7 @@ export default function WelcomeScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 0.8,
+    flex: 1,
   },
   headerWrapper: {
     flexDirection: 'row',
