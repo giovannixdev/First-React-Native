@@ -9,41 +9,25 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
-
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 export default function App() {
-  // const Stack = createNativeStackNavigator();
-  const Tab = createBottomTabNavigator();
+  const Drawer = createDrawerNavigator();
 
   return (
     <>
-    {/* <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Welcome" component={WelcomeScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>   */}
       <NavigationContainer>
-        <LittleLemonHeader />
-        <Tab.Navigator
-          screenOptions={({ route }) => ({
-            tabBarIcon: ({ focused, color, size }) => {
-              let iconName;
-
-              if (route.name === 'Welcome') {
-                iconName = 'ios-home'
-              } else if (route.name === 'Login') {
-                iconName = 'ios-enter';
-              }
-              return <Ionicons name={iconName} size={size} />;
-            },
-            tabBarActiveTintColor: 'tomato',
-            tabBarInactiveTintColor: 'gray',
-          })}
-          >
-          <Tab.Screen name="Welcome" component={WelcomeScreen} />
-          <Tab.Screen name="Login" component={LoginScreen} />
-        </Tab.Navigator>
+        <View style={styles.container}>
+        {/* <LittleLemonHeader /> */}
+          <Drawer.Navigator 
+            useLegacyImplementation 
+            // screenOptions={{ drawerPosition: "right" }}
+            initialRouteName='Login'>
+            <Drawer.Screen name="Welcome" component={WelcomeScreen} />
+            <Drawer.Screen name="Login" component={LoginScreen} />
+          </Drawer.Navigator>
+          {/* <LittleLemonFooter/> */}
+        </View>
       </NavigationContainer>
     </>
   );
